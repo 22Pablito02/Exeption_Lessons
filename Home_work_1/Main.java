@@ -16,9 +16,10 @@ public class Main {
         // System.out.println(outsideArr(3));
         // System.out.println(positiveNum(-1));
 
-        int[] a = {1,2,3};
-        int[] b = {4,5};
-        System.out.println(Arrays.toString(arrDif(a, b)));
+        int[] a = { 1, 2, 3 };
+        int[] b = { 4, 5, 6 };
+        // System.out.println(Arrays.toString(arrDif(a, b)));
+        System.out.println(Arrays.toString(arrDiv(a, b)));
 
     }
 
@@ -45,17 +46,20 @@ public class Main {
     // Посмотрите на код, и подумайте сколько разных типов исключений вы тут сможете
     // получить?
 
-    // private static int sum2d(String[][] arr) { // может выбросить NullPointerException: Cannot read the array length
-    //                                            // because "arr" is null
-    //     int sum = 0;
-    //     for (int i = 0; i < arr.length; i++) {
-    //         for (int j = 0; j < 5; j++) {// Может быть выход за пределы массива - ArrayIndexOutOfBoundsException
-    //             int val = Integer.parseInt(arr[i][j]);// Массив типа String, поэтому элементы могут быть буквами или
-    //                                                   // символами, тогда метод parseInt выбросит NumberFormatException
-    //             sum += val;
-    //         }
-    //     }
-    //     return sum;
+    // private static int sum2d(String[][] arr) { // может выбросить
+    // NullPointerException: Cannot read the array length
+    // // because "arr" is null
+    // int sum = 0;
+    // for (int i = 0; i < arr.length; i++) {
+    // for (int j = 0; j < 5; j++) {// Может быть выход за пределы массива -
+    // ArrayIndexOutOfBoundsException
+    // int val = Integer.parseInt(arr[i][j]);// Массив типа String, поэтому элементы
+    // могут быть буквами или
+    // // символами, тогда метод parseInt выбросит NumberFormatException
+    // sum += val;
+    // }
+    // }
+    // return sum;
     // }
 
     // Задание 3
@@ -64,15 +68,41 @@ public class Main {
     // элементов двух входящих массивов в той же ячейке. Если длины массивов не
     // равны, необходимо как-то оповестить пользователя.
 
-    public static int[] arrDif(int[] arrA, int[] arrB) {
+    // public static int[] arrDif(int[] arrA, int[] arrB) {
 
+    // if (arrA.length != arrB.length) {
+    // throw new IllegalArgumentException("Неравное количество элементов
+    // массивов!");
+    // } else {
+    // for (int i = 0; i < arrA.length; i++) {
+    // arrA[i] -= arrB[i];
+    // }
+    // return arrA;
+    // }
+
+    // }
+
+    // Задание 4
+    // * Реализуйте метод, принимающий в качестве аргументов два целочисленных
+    // массива, и возвращающий новый массив, каждый элемент которого равен частному
+    // элементов двух входящих массивов в той же ячейке. Если длины массивов не
+    // равны, необходимо как-то оповестить пользователя. Важно: При выполнении
+    // метода единственное исключение, которое пользователь может увидеть -
+    // RuntimeException, т.е. ваше.
+    
+    public static double[] arrDiv(int[] arrA, int[] arrB) {
+
+        double[] res = new double[arrA.length];
         if (arrA.length != arrB.length) {
-            throw new IllegalArgumentException("Неравное количество элементов массивов!");
+            throw new RuntimeException("Неравное количество элементов массивов!");
         } else {
             for (int i = 0; i < arrA.length; i++) {
-                arrA[i] -= arrB[i];
+                if (arrB[i] == 0) {
+                    throw new RuntimeException("Деление на ноль!");
+                } else
+                    res[i] = arrA[i] * 1.0 / arrB[i];
             }
-            return arrA;
+            return res;
         }
 
     }
