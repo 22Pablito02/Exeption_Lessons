@@ -3,16 +3,20 @@ package Exeption_Lessons.Home_work_1;
 import java.net.SocketPermission;
 import javax.print.DocFlavor.STRING;
 
+public class Main {
 
 //  Задание 1
 //  Реализуйте 3 метода, чтобы в каждом из них получить разные исключения
-// public class Main {
-//     public static void main(String[] args) throws Exception {
 
-//         //System.out.println(divByZyero(6,0));
-//         //System.out.println(outsideArr(3));
-//         //System.out.println(positiveNum(-1));
-//     }
+    public static void main(String[] args) throws Exception {
+
+        //System.out.println(divByZyero(6,0));
+        //System.out.println(outsideArr(3));
+        //System.out.println(positiveNum(-1));
+
+ 
+
+    }
 
 //     public static int divByZyero(int a, int b) {
 //         if (b == 0) {
@@ -48,4 +52,5 @@ import javax.print.DocFlavor.STRING;
             }
             return sum;
         }
+
     };
