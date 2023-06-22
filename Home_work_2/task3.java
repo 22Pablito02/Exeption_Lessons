@@ -1,7 +1,5 @@
 package Exeption_Lessons.Home_work_2;
 
-import java.io.FileNotFoundException;
-
 public class task3 {
 
     // Дан следующий код, исправьте его там, где требуется
